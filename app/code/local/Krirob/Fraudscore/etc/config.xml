@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+   <modules>
+      <Krirob_Fraudscore>
+         <version>0.1.0</version>
+      </Krirob_Fraudscore>
+   </modules>
+      <global>
+       <models>
+            <fraudscore>
+                <class>Krirob_Fraudscore_Model</class>
+            </fraudscore>
+        </models>
+       <events>
+           <sales_order_place_after>
+                <observer>
+<fraudscore_order_place>
+<class>Krirob_Fraudscore_Model_Observer</class>
+<method>execute</method>
+</fraudscore_order_place>
+                </observer>
+           </sales_order_place_after>
+      </events>
+    </global>
+</config>
